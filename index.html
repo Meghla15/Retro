@@ -66,9 +66,9 @@
                   <div class="w-2/3 ">
                     <h1 class="mb-5 lg:text-5xl text-3xl font-bold lg:text-start text-center ">Welcome to the <br> <Span class="text-cyan-600">ReTro</Span> Fourm</h1>
                     <p class="mb-5 lg:text-start text-center">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <div id="" class="join text-start">
-                        <input class="input input-bordered join-item" placeholder="Search"/>
-                        <button class="btn join-item rounded-r-full bg-[#797DFC] text-white">Subscribe</button>
+                    <div class="join text-start">
+                        <input id="search-field" class="input input-bordered join-item" placeholder="Search"/>
+                        <button onclick="handleSearch()" class="btn join-item rounded-r-full bg-[#797DFC] text-slate-600">Search</button>
                       </div>
                   </div>
                   <div class="bg-slate-100 text-black rounded-2xl p-10">
@@ -99,65 +99,66 @@
         <section class="lg:mt-6 mt-2">
             <h1 class="lg:text-4xl text-2xl font-bold text-center">Let's Discuss</h1>
             <p class="w-2/3 mx-auto text-center mt-3 opacity-70">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-            <div class="flex lg:flex-row flex-col gap-3 mt-4 p-4 justify-around">
-                <div class="flex bg-slate-100 p-5 rounded-2xl">
-                    <div class="img">
-
+            
+            <div id="news-container" class="grid lg:grid-cols-2 grid-cols-1 gap-3 mt-4 p-4 justify-around">
+                    <!-- <div id="single-news" class="flex gap-5 bg-slate-100 p-5 rounded-2xl">
+                        <div class="img">
+                            <img src="./images/Rectangle 4.png" alt="">
+                        </div>
+                        <div class="">
+                            <div class="flex gap-6 font-medium">
+                                <p># Music</p>
+                                <p>Author : Awlad Hossain</p>
+                            </div>
+                            <h2 class="text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h2>
+                            <p class="mb-3 text-slate-500">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                            <hr class="mb-3">
+                            <div class="flex justify-evenly text-slate-500">
+                                <div class="flex gap-2">
+                                    <img src="./images/tabler-icon-message-2.png" alt="">
+                                    <p>550</p>
+        
+                                </div>
+                                <div class="flex gap-2">
+                                    <img src="./images/tabler-icon-eye.png" alt="">
+                                    <p>1588</p>
+        
+                                </div>
+                                <div class="flex gap-2">
+                                    <img src="./images/tabler-icon-clock-hour-9.png" alt="">
+                                    <p>5 min</p>
+        
+                                </div>
+                                <div id="message-container">
+                                    <img src="./images/email 1.png" alt="">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="flex flex-col bg-slate-100 p-5 rounded-2xl gap-3">
+                        
+                    <div class="flex gap-28">
+                        <h1 class="text-xl font-semibold">Title</h1>
+                        <p class="text-slate-500">Mark as read()</p>
                     </div>
-                    <div class="">
-                        <div class="flex gap-6 font-medium">
-                            <p># Music</p>
-                            <p>Author : Awlad Hossain</p>
-                        </div>
-                        <h2 class="text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h2>
-                        <p class="mb-3 text-slate-500">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
-                        <hr class="mb-3">
-                        <div class="flex justify-evenly text-slate-500">
-                            <div class="flex gap-2">
-                                <img src="./images/tabler-icon-message-2.png" alt="">
-                                <p>550</p>
-    
+                        
+                    
+                        <div>
+                            <div class="flex gap-28">
+                                <h2>Title</h2>
+                                <div class="flex gap-2">
+                                    <img src="./images/tabler-icon-eye.png" alt="">
+                                    <p>1588</p>
+        
+                                </div>
+        
+        
                             </div>
-                            <div class="flex gap-2">
-                                <img src="./images/tabler-icon-eye.png" alt="">
-                                <p>1588</p>
-    
-                            </div>
-                            <div class="flex gap-2">
-                                <img src="./images/tabler-icon-clock-hour-9.png" alt="">
-                                <p>5 min</p>
-    
-                            </div>
-                            <div id="message-container">
-                                <img src="./images/email 1.png" alt="">
-
-                            </div>
-                        </div>
+                           </div>
                     </div>
-
-                </div>
-                <div class="flex flex-col bg-slate-100 p-5 rounded-2xl gap-3">
-                    
-                <div class="flex gap-28">
-                    <h1 class="text-xl font-semibold">Title</h1>
-                    <p class="text-slate-500">Mark as read()</p>
-                </div>
-                    
-                
-                    <div>
-                        <div class="flex gap-28">
-                            <h2>Title</h2>
-                            <div class="flex gap-2">
-                                <img src="./images/tabler-icon-eye.png" alt="">
-                                <p>1588</p>
-    
-                            </div>
-    
-    
-                        </div>
-                       </div>
-                </div>
             </div>
+            
         </section>
         <!-- let's discuss end  -->
 
