@@ -4,11 +4,3 @@
 .font-family{
     font-family: "Mulish", sans-serif;
 }
-#news-container{
-    display: flex;
-    justify-content: space-around;
-    gap: 12px;
-    margin-top: 16px;
-    padding: 16px;
-
-}
