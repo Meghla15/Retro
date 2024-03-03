@@ -2,7 +2,6 @@ const loadNews = async() =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     const data = await res.json();
     const newses = data.posts;
-    // console.log(news)
     displayNews(newses);
     
 }
@@ -12,12 +11,15 @@ const displayNews = (newses) =>{
        newsContainer.textContent="";
     
     newses.forEach(news => {
+        // console.log(news)
+        
        const newsCard = document.createElement('div');
        newsCard.classList= `flex flex-col gap-4 bg-slate-100 p-5 rounded-2xl `;
        newsCard.innerHTML = `
        <div class="img">
        <img class ="w-[30%] rounded-3xl" src="${news.image}" alt="">
-   </div>
+      
+      </div>
        <div class="flex gap-10 font-medium">
            <p># Music</p>
            <p>Author: ${news.author.name}</p>
@@ -42,12 +44,13 @@ const displayNews = (newses) =>{
 
            </div>
            <div id="message-container">
-               <button><img src="./images/email 1.png" alt=""></button>
+               <button onclick="check('${news.title};${news.view_count}')"><img src="./images/email 1.png" alt=""></button>
 
            </div>
        </div>
        `
-       newsContainer.appendChild(newsCard)
+       newsContainer.appendChild(newsCard);
+       
         
     });
     
@@ -85,6 +88,7 @@ const latestLoadData = async() =>{
     const res =await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
     const datas = await res.json();
     const latestNews = datas;
+    // console.log(datas)
 
     const latestDataContainer =document.getElementById('latest-data-container');
     latestNews.forEach(data =>{
@@ -92,29 +96,34 @@ const latestLoadData = async() =>{
         container.classList =`card w-96 bg-base-100 shadow-xl`
         container.innerHTML=`
         <figure class="px-10 pt-10">
-                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                      <img src="${data.cover_image}" alt="" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <div class="flex gap-2">
                             <img src="./images/Frame.png" alt="">
                             <div id="">
-                               <p class="text-slate-500">29 January 2024</p>
+                               <p class="text-slate-500">${data.author.posted_date}</p>
                             </div>
 
                         </div>
-                      <h2 class="card-title text-base font-bold text-start">What will a mars habitat force that impact in our daily life!!!</h2>
-                      <p class="text-slate-400 text-start">Yes, you can run unit tests and view the results directly within the app. </p>
-                      <div class="flex">
-                        <img src="" alt="">
-                        <div>
-                            <h2 class="font-bold text-xs text-start">Cameron Williamson</h2>
-                            <p class="font-bold text-xs text-slate-400 text-start">Unknown</p>
+                      <h2 class="card-title text-base font-bold text-start">${data.title}</h2>
+                      <p class="text-slate-400 text-start">${data.description} </p>
+                      
+                        <img src="${data.author.cover_image}" alt="">
+                            <h2 class="font-bold text-xs text-center">${data.author.name}</h2>
+                            <p class="font-bold text-xs text-slate-400 text-start">${data.author.designation}</p>
                         </div>                        
                       </div>
                     </div>
         `
         latestDataContainer.appendChild(container);
     })
+}
+
+
+const check = (text) =>{
+    console.log(text)
+   
 }
 latestLoadData();
      
