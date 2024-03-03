@@ -16,9 +16,9 @@ const displayNews = (newses) =>{
        const newsCard = document.createElement('div');
        newsCard.classList= `flex flex-col gap-4 bg-slate-100 p-5 rounded-2xl `;
        newsCard.innerHTML = `
-       <div class="img">
-       <img class ="w-[30%] rounded-3xl" src="${news.image}" alt="">
-      
+       <div class="indicator">
+      <span class="indicator-item badge bg-[#10B981]"></span> 
+      <div class="grid w-32 h-32 bg-base-300 place-items-center"><img class="rounded-3xl" src="${news.image}" alt=""></div>
       </div>
        <div class="flex gap-10 font-medium">
            <p># Music</p>
@@ -102,7 +102,7 @@ const latestLoadData = async() =>{
                         <div class="flex gap-2">
                             <img src="./images/Frame.png" alt="">
                             <div id="">
-                               <p class="text-slate-500">${data.author.posted_date}</p>
+                               <p class="text-slate-500">${data.author.posted_date?data.author.posted_date:"No Publish Date"}</p>
                             </div>
 
                         </div>
@@ -111,18 +111,23 @@ const latestLoadData = async() =>{
                       
                         <img src="${data.author.cover_image}" alt="">
                             <h2 class="font-bold text-xs text-center">${data.author.name}</h2>
-                            <p class="font-bold text-xs text-slate-400 text-start">${data.author.designation}</p>
+                            <p class="font-bold text-xs text-slate-400 text-start">${data.author.designation?data.author.designation:"Unknown"}</p>
+                            
                                                
                       
                     </div>
         `
+       
         latestDataContainer.appendChild(container);
     })
 }
 
 
+
 const check = (text) =>{
-    console.log(text)
+    
+        
+    console.log(text);
    
 }
 latestLoadData();
