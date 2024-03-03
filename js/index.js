@@ -112,8 +112,8 @@ const latestLoadData = async() =>{
                         <img src="${data.author.cover_image}" alt="">
                             <h2 class="font-bold text-xs text-center">${data.author.name}</h2>
                             <p class="font-bold text-xs text-slate-400 text-start">${data.author.designation}</p>
-                        </div>                        
-                      </div>
+                                               
+                      
                     </div>
         `
         latestDataContainer.appendChild(container);
