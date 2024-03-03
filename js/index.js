@@ -124,11 +124,9 @@ const latestLoadData = async() =>{
 
 
 
-const check = (text) =>{
-    
-        
+const check = (text) =>{ 
     console.log(text);
-   
+
 }
 latestLoadData();
      
